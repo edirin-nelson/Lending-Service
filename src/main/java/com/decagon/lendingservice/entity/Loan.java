@@ -11,25 +11,32 @@ import java.util.UUID;
 public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int loanId;
+    private int loan_id;
+    @Column(name = "user_id")
     private String userId;
+    @Column(name = "loan_amount")
     private BigDecimal loanAmount;
+    @Column
     private String purpose;
+    @Column(name = "interest_rate")
     private BigDecimal interestRate;
-    private int repaymentTerm;
+    @Column(name = "repayment_terms")
+    private int repaymentTerms;
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
     public Loan() {
     }
 
     public Loan(String userId, BigDecimal loanAmount, String purpose, BigDecimal interestRate,
-                int repaymentTerm, LocalDateTime createdAt, LocalDateTime updatedAt) {
+                int repaymentTerms, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.userId = generateUserId();
         this.loanAmount = loanAmount;
         this.purpose = purpose;
         this.interestRate = interestRate;
-        this.repaymentTerm = repaymentTerm;
+        this.repaymentTerms = repaymentTerms;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
