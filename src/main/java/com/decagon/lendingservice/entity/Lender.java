@@ -10,8 +10,7 @@ public class Lender {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long lender_id;
 
-    @OneToOne
-    private User user_id;
+    //user id will be mapped here
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
