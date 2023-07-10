@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 public class InvestmentPreference {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int preference_id;
     @Column(name = "loan_amount")
     private BigDecimal loanAmount;
     @Column(name = "interest_rate")
